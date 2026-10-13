@@ -10,7 +10,9 @@
 <body>
 
 <header class="header">
-  <a href="#" class="logo">✈ ANA <span>Travels</span></a>
+  <a href="#home" class="logo">
+  <img src="ana-travels-logo.png" alt="ANA Travels">
+</a>
   <nav id="nav">
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -32,20 +34,27 @@
 
 <section class="booking" id="booking">
   <h2>Plan Your Trip</h2>
-  <form id="travelForm">
-    <input id="from" placeholder="From City" required>
-    <input id="to" placeholder="Destination" required>
-    <input id="date" type="date" required>
-    <select id="passengers">
-      <option value="1">1 Passenger</option>
-      <option value="2">2 Passengers</option>
-      <option value="3">3 Passengers</option>
-      <option value="4">4 Passengers</option>
-      <option value="5+">5+ Passengers</option>
-    </select>
-    <button class="btn" type="submit">Search Trip</button>
-  </form>
-  <p id="result" role="status"></p>
+  
+<form id="travelForm">
+  <input id="from" placeholder="From City" required>
+  <input id="to" placeholder="Destination" required>
+  <input id="date" type="date" required>
+
+  <select id="passengers">
+    <option value="1">1 Passenger</option>
+    <option value="2">2 Passengers</option>
+    <option value="3">3 Passengers</option>
+    <option value="4">4 Passengers</option>
+    <option value="5+">5+ Passengers</option>
+  </select>
+
+  <button class="btn" type="submit">
+    Contact on WhatsApp
+  </button>
+</form>
+
+<p id="result" role="status"></p>
+
 </section>
 
 <section class="services" id="services">
@@ -115,6 +124,43 @@
   <p>© <span id="year"></span> ANA Travels. All Rights Reserved.</p>
   <p>Explore · Discover · Travel</p>
 </footer>
+
+
+
+<!-- ANA Travels Welcome Popup -->
+<div id="welcomePopup" class="welcome-overlay">
+  <div class="welcome-box" role="dialog"
+       aria-modal="true" aria-labelledby="welcomeTitle">
+
+    <button id="closeWelcome" class="welcome-close"
+            aria-label="Close welcome popup">&times;</button>
+
+    <div class="welcome-icon">
+  	<img src="ana-travels-logo.png" alt="ANA Travels Logo">
+	</div>
+
+    <p class="welcome-small">WELCOME TO</p>
+
+    <h2 id="welcomeTitle">ANA Travels</h2>
+
+    <p class="welcome-message">
+      Your journey, our priority!
+    </p>
+
+    <p class="welcome-description">
+      Discover amazing destinations, comfortable journeys
+      and memorable holiday experiences with us.
+    </p>
+
+    <button id="exploreWelcome" class="welcome-button">
+      Explore Packages
+    </button>
+
+    <p class="welcome-footer">Explore · Discover · Travel</p>
+  </div>
+</div>
+
+
 
 <script src="script.js"></script>
 </body>
