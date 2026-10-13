@@ -1,0 +1,778 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #173453;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7%;
+  background: white;
+  box-shadow: 0 2px 12px #00000012;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+  color: #0878c9;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #123b66;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #173453;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #f39800;
+}
+
+.menu-btn {
+  display: none;
+  padding: 6px 10px;
+  font-size: 22px;
+  background: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+  color: white;
+  background:
+    linear-gradient(90deg, #063b66d9, #063b6633),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5vw, 55px);
+  line-height: 1.15;
+  margin: 12px 0;
+}
+
+.hero-content p {
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-block;
+  background: #f39800;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #dc8100;
+}
+
+.booking {
+  margin: -30px auto 35px;
+  position: relative;
+  width: 86%;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px #00000018;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  color: #103f70;
+  font-size: 30px;
+}
+
+#travelForm {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+input, select {
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #ccd7e3;
+  border-radius: 6px;
+  font-size: 15px;
+  background: white;
+}
+
+#result {
+  margin-top: 15px;
+  text-align: center;
+  color: #0878c9;
+}
+
+.services, .destinations {
+  padding: 45px 7%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px 18px;
+  text-align: center;
+  border: 1px solid #e3eaf1;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px #00000008;
+}
+
+.icon {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.card h3, .destination h3 {
+  margin-bottom: 8px;
+}
+
+.destinations {
+  background: #f0f6fc;
+}
+
+.destination {
+  min-height: 170px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  border-radius: 12px;
+  background: linear-gradient(transparent, #062d50),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=80")
+    center/cover;
+}
+
+.destination:nth-child(2) {
+  background-position: 70% center;
+}
+
+.destination:nth-child(3) {
+  background-image: linear-gradient(transparent, #062d50),
+    url("https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=80");
+}
+
+.destination:nth-child(4) {
+  background-position: right center;
+}
+
+.about, .contact {
+  padding: 50px 8%;
+  text-align: center;
+}
+
+.about p, .contact p {
+  max-width: 700px;
+  margin: 0 auto 18px;
+}
+
+.contact {
+  background: #eaf4fc;
+}
+
+.small {
+  font-size: 12px;
+  margin-top: 12px !important;
+}
+
+footer {
+  background: #0b3154;
+  color: white;
+  padding: 24px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  #travelForm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 14px 5%;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 390px;
+    padding: 40px 6%;
+  }
+
+  .booking {
+    width: 92%;
+    padding: 18px;
+  }
+
+  #travelForm, .cards {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+
+/* ANA Travels Welcome Popup */
+
+/* ===== ANA TRAVELS PREMIUM WELCOME POPUP ===== */
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(3, 19, 38, 0.78);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  z-index: 99999;
+}
+
+.welcome-overlay.show {
+  display: flex;
+  animation: anaFadeIn 0.35s ease;
+}
+
+.welcome-box {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: 510px;
+  padding: 48px 32px 30px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 24px;
+  text-align: center;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 35, 67, 0.30) 0%,
+      rgba(4, 35, 67, 0.88) 48%,
+      rgba(4, 35, 67, 0.98) 100%
+    ),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85")
+    center / cover no-repeat;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+  animation: anaPopupIn 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+.welcome-box::before {
+  content: "";
+  position: absolute;
+  top: -55px;
+  right: -55px;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255,255,255,0.04),
+              0 0 0 40px rgba(255,255,255,0.03);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.welcome-close {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 50%;
+  background: rgba(0,0,0,0.25);
+  color: white;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.welcome-close:hover {
+  background: #f39800;
+  border-color: #f39800;
+  transform: rotate(90deg);
+}
+
+.welcome-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 20px;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  font-size: 39px;
+}
+
+.welcome-small {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #ffd27a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.welcome-box h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: clamp(32px, 7vw, 43px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+
+.welcome-message {
+  margin: 0 0 16px;
+  color: #ffd27a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.welcome-description {
+  max-width: 365px;
+  margin: 0 auto 27px;
+  color: rgba(255,255,255,0.91);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.welcome-button {
+  display: inline-block;
+  min-width: 205px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffbd43, #f18700);
+  color: #173453;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(243,152,0,0.30);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.welcome-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(243,152,0,0.42);
+}
+
+.welcome-footer {
+  margin: 25px 0 0;
+  padding-top: 17px;
+  border-top: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.75);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+@keyframes anaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes anaPopupIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-overlay {
+    padding: 14px;
+  }
+
+  .welcome-box {
+    padding: 43px 22px 25px;
+    border-radius: 20px;
+  }
+
+  .welcome-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 33px;
+    margin-bottom: 16px;
+  }
+
+  .welcome-message {
+    font-size: 16px;
+  }
+
+  .welcome-description {
+    font-size: 14px;
+  }
+
+  .welcome-button {
+    width: 100%;
+  }
+
+  .welcome-footer {
+    letter-spacing: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-overlay.show,
+  .welcome-box {
+    animation: none;
+  }
+
+  .welcome-close,
+  .welcome-button {
+    transition: none;
+  }
+}
+
+/* ANA Travels logo inside welcome popup */
+.welcome-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .welcome-icon {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+
+.header .logo img {
+  display: block;
+  width: 170px;
+  max-height: 65px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .header .logo img {
+    width: 135px;
+    max-height: 52px;
+  }
+}
+
+
+/* HERO BACKGROUND IMAGE SLIDER */
+.hero {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: #12344a;
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1.2s ease, transform 6s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 24, 42, 0.82),
+    rgba(3, 24, 42, 0.42),
+    rgba(3, 24, 42, 0.15)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 90px 30px;
+  text-align: left;
+}
+
+.hero-content p:first-child {
+  color: #ffd54f;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  max-width: 750px;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.15;
+  margin: 18px 0;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  background: #ffd54f;
+  color: #12344a;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.hero-dots {
+  position: absolute;
+  z-index: 3;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-dot.active {
+  background: #ffd54f;
+  border-color: #ffd54f;
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 320px;
+  }
+
+  .hero-content {
+    padding: 65px 22px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+
+
+/* Compact ANA Travels background slider */
+.hero {
+  min-height: 0;
+  height: 400px;
+  padding: 0;
+}
+
+.hero-content {
+  padding: 35px 30px;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 320px;
+    min-height: 0;
+  }
+
+  .hero-content {
+    padding: 25px 22px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .hero .btn {
+    margin-top: 8px;
+    padding: 10px 18px;
+  }
+}
+
+
+
+/* Align hero slider text to the left */
+.hero-content {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1100px;
+  padding-left: 7%;
+  padding-right: 20px;
+}
+
+.hero-content h1 {
+  text-align: left;
+  margin-left: 0;
+}
+
+.hero-content p {
+  text-align: left;
+}
+
+.hero-content .btn {
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .hero-content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+
+
+/* Make ANA Travels header logo bigger */
+.header .logo img {
+  width: 220px;
+  max-height: 85px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .header .logo img {
+    width: 165px;
+    max-height: 65px;
+  }
+}
